@@ -16,7 +16,7 @@ const winningCombinations = [
     [2, 4, 6]
 ];
 
-// Initialize the board
+
 function createBoard() {
     board.innerHTML = '';
     boardState = Array(9).fill(null);
@@ -28,7 +28,7 @@ function createBoard() {
     }
 }
 
-// Handle cell click
+
 function handleCellClick(e) {
     const cell = e.target;
     const index = cell.dataset.index;
@@ -51,14 +51,14 @@ function handleCellClick(e) {
     }
 }
 
-// Check for a win
+
 function checkWin() {
     return winningCombinations.some(combination => {
         return combination.every(index => boardState[index] === currentPlayer);
     });
 }
 
-// Reset the game
+
 function resetGame() {
     gameActive = true;
     currentPlayer = 'X';
@@ -66,9 +66,9 @@ function resetGame() {
     createBoard();
 }
 
-// Event listeners
+
 board.addEventListener('click', handleCellClick);
 resetButton.addEventListener('click', resetGame);
 
-// Initial setup
+
 createBoard();
